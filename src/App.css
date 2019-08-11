@@ -1,5 +1,28 @@
 .App {
-  text-align: center;
+  display: flex;
+}
+
+.App div {
+  flex: 1;
+}
+
+.chosen {
+  background-color: blue;
+  color: white;
+}
+
+.App .list-name {
+  font-size: 2rem;
+  margin: 0 1rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+  cursor: pointer;
+}
+
+.list-name-image {
+  width: 350px;
+  height: 350px;
 }
 
 .App-logo {
