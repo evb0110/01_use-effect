@@ -5,11 +5,9 @@ import axios from 'axios';
 export default function Details({ info }) {
   const [data, setData] = useState(null);
 
-  const [dataObject, setDataObject] = useState({});
-
   useEffect(() => {
     if (!info.id) return;
-    const currentData = dataObject[info.id];
+    const currentData = data;
 
     if (currentData) {
       return setData(currentData);
@@ -19,13 +17,12 @@ export default function Details({ info }) {
         .then(res => res.data)
         .then(d => {
           setData(d);
-          setDataObject(dataObject => ({ ...dataObject, [info.id]: d }));
         })
         .catch(function(error) {
           console.log(error);
         });
     }
-  }, [info.id, dataObject]);
+  }, [info.id, data]);
 
   if (!data) return null;
 
